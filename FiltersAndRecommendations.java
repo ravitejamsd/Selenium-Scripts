@@ -50,10 +50,9 @@ public void Sign_in() throws Exception {
 	Thread.sleep(sleepTime);
 	WebElement Title = driver.findElement(By.xpath("//div[text()='All Motion']"));
 	WebElement FilterIcon = driver.findElement(By.xpath("//*[@data-testid='TipsAndUpdatesIcon']"));
-
 	String ActualText = Title.getText();
 	String ExpectedText = "All Motion";
-	assertEquals(ActualText, ExpectedText, "Search Results are Mismatched");
+	Assert.assertEquals(ActualText, ExpectedText);
 	Thread.sleep(sleepTime);
 	FilterIcon.click();
 	Thread.sleep(sleepTime);
@@ -65,36 +64,5 @@ public void Sign_in() throws Exception {
 	driver.quit();
 
   }
-/*@Test(priority=3)
-public void RecommendationsVerify() throws Exception {
-	WebElement element;
-	try {
-		
-	    element = driver.findElement(By.xpath("//*[@data-testid='RecommendIcon']"));
-	    element.click();
-	} catch (StaleElementReferenceException e) {
-		WebElement Title1 = driver.findElement(By.xpath("//h2[text()='1000 Series']"));
-
-	    element = driver.findElement(By.xpath("//*[@data-testid='RecommendIcon']"));
-	    element.click();
-	Thread.sleep(sleepTime);
-	Assert.assertFalse(Title1.isDisplayed());
-	System.out.println(Title1.getText());
-
-	}
-	Thread.sleep(sleepTime);
-	driver.findElement(By.xpath("//*[@data-testid='RecommendIcon']")).click();
-	Thread.sleep(sleepTime);
-	WebElement Title2 = driver.findElement(By.xpath("//h2[text()='1000 Series']"));
-	String ActualTitle = Title2.getText();
-	String ExpectedTitle = "1000 Series";
-	assertEquals(ActualTitle, ExpectedTitle, "Search Results are Mismatched");
-	Assert.assertTrue(Title2.isDisplayed());
-	System.out.println(Title2.getText());
-	System.out.println("==========================Test Passsed====================");
-	Thread.sleep(sleepTime);
-	driver.quit();
-
-  }*/
 
 }
